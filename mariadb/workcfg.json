@@ -1,0 +1,22 @@
+{
+  "initdelay": 3,
+  "workstart": "./mariadbstart.sh",
+  "workwatch": 15,
+  "workintvl": 5,
+  "firewall": {
+    "tcpportpmt": "3306",
+    "udpportpmt": "",
+    "icmppermit": "yes"
+    },
+  "mariadb": {
+    "rootpwd": "",
+    "srvport": "",
+    "dbauthz": [
+      { "usernm": "admin",
+        "passwd": "admin000",
+        "dbname": "*"
+      }
+    ]
+  }
+}
+

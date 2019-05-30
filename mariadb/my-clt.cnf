@@ -1,0 +1,89 @@
+[client]
+socket=/var/lib/mysql/mysql.sock
+default-character-set=utf8
+
+[mysql]
+socket=/var/lib/mysql/mysql.sock
+default-character-set=utf8
+
+[mysql_upgrade]
+
+[mysqladmin]
+
+[mysqlbinlog]
+
+[mysqlcheck]
+
+[mysqldump]
+
+[mysqlimport]
+
+[mysqlshow]
+
+[mysqlslap]
+
+###################  服务器配置项  ###################
+[mysqld]
+user=mysql
+bind-address=0.0.0.0
+port=3306
+datadir=./datalib
+basedir=/usr
+tmpdir=/tmp
+plugin-dir=/usr/lib64/mysql/plugin
+socket=/var/lib/mysql/mysql.sock
+log_error=./mariadb.log
+pid-file=/var/run/mariadb/mariadb.pid
+symbolic-links=0
+
+##########################
+# Character Set
+##########################
+init_connect='SET collation_connection = utf8_unicode_ci' 
+init_connect='SET NAMES utf8' 
+character-set-server=utf8 
+collation-server=utf8_unicode_ci 
+skip-character-set-client-handshake
+
+#skip-grant-tables
+#skip-networking
+#explicit_defaults_for_timestamp=1
+#table_open_cache = 8000
+
+##########################
+# time out
+##########################
+#connect_timeout = 20
+#wait_timeout = 86400
+
+##########################
+# connection
+##########################
+#max_connections = 2000
+#max_user_connections = 1900
+#max_connect_errors = 100000
+#max_allowed_packet = 1G
+
+##########################
+# thread pool
+##########################
+#thread_handling=pool-of-threads
+#thread_handling=one-thread-per-connection
+#thread_pool_oversubscribe=8 
+
+##########################
+# innodb
+##########################
+# innodb_file_per_table=1
+# innodb_data_file_path = ibdata1:1024M:autoextend
+# max_connections = 3000
+# back_log = 20000
+# innodb_buffer_pool_size=2048M
+# innodb_log_file_size=256M
+# innodb_flush_log_at_trx_commit=0
+# innodb_log_buffer_size = 16M
+# binlog_cache_size = 16M
+# innodb_thread_concurrency=0
+# key_buffer_size = 2048m
+# max_heap_table_size=2048M
+# tmp_table_size=1024M
