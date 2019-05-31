@@ -13,9 +13,7 @@ docker container run --detach --restart always \
 --network imvn --cap-add NET_ADMIN \
 --volume /etc/localtime:/etc/localtime:ro \
 --volume /srv/datadisk:/srv/mariadb/datalib \
---env "SRVCFG=$SRVCFG" \
 --ip 192.168.15.198 --dns 192.168.15.192 --dns-search local \
-registry.cn-hangzhou.aliyuncs.com/zhixia/imginit:mariadb
+--env "SRVCFG=$SRVCFG" ctnmariadb
 
 docker container exec -it mrdb198 bash
-
